@@ -1,5 +1,7 @@
 extends Node2D
 #new
+var obstacleScene = preload("res://Ground/Obstacle.tscn")
+
 var groundScene = preload("res://Ground/Ground.tscn")
 var groundArray = []
 #var groundArrayIdex = 0
@@ -8,7 +10,10 @@ var screenWidth = 800
 var index
 
 func _ready():
+	randomize()
 	spawnInitialGround()
+	
+	
 	pass
 
 
@@ -26,6 +31,8 @@ func spawnNewGroundAtEnd():
 	
 	var newGroundPosition = lastGroundpostion + Vector2(lastGround.get_child(0).texture.get_width(), 0)
 	
+	#print(newGroundPosition)
+	
 	var newGround = groundScene.instance()
 	
 	newGround.position = newGroundPosition
@@ -33,6 +40,8 @@ func spawnNewGroundAtEnd():
 	call_deferred("add_child", newGround)
 	
 	groundArray.append(newGround)
+	
+	obstacleSpawn(newGround)
 
 func _process(_delta):
 	movingGround()
@@ -51,3 +60,22 @@ func movingGround():
 	
 	if lastGround.position.x + lastGround.get_child(0).texture.get_width() < get_viewport_rect().size.x:
 		spawnNewGroundAtEnd()
+
+
+func obstacleSpawn(lastGround):
+	var spawnPosition = Vector2(rand_range(0, lastGround.get_child(0).texture.get_width()), lastGround.get_child(0).position.y - rand_range(0, lastGround.get_child(0).texture.get_height()))
+	var initialObstacle = obstacleScene.instance()
+	
+	if spawnPosition.x == 0:
+		spawnPosition.x += initialObstacle.get_child(0).texture.get_width()
+		
+	elif spawnPosition.x >= lastGround.get_child(0).texture.get_width():
+		spawnPosition.x -= initialObstacle.get_child(0).texture.get_width()
+	
+	initialObstacle.position = spawnPosition
+	
+	call_deferred("add_child", initialObstacle)
+	
+	print(spawnPosition)
+	#var newObstaclePosition = Vector2(rand_range(lastGround.get_child(0).texture.get_width()-initialObstacle))
+	pass
