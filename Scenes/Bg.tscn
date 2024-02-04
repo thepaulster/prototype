@@ -12,7 +12,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1.66146, 1.66204 )
+scale = Vector2( 1.66667, 1.66204 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -21,7 +21,7 @@ motion_scale = Vector2( 0.6, 1 )
 motion_mirroring = Vector2( 640, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
-scale = Vector2( 1.66406, 1.66204 )
+scale = Vector2( 1.66667, 1.66204 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -30,7 +30,7 @@ motion_scale = Vector2( 0.7, 1 )
 motion_mirroring = Vector2( 640, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
-scale = Vector2( 1.66406, 1.66204 )
+scale = Vector2( 1.66667, 1.66204 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -48,6 +48,6 @@ motion_scale = Vector2( 0.9, 1 )
 motion_mirroring = Vector2( 640, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer4"]
-scale = Vector2( 1.66406, 1.66204 )
+scale = Vector2( 1.66667, 1.66204 )
 texture = ExtResource( 5 )
 centered = false
