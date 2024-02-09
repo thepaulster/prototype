@@ -18,8 +18,8 @@ var score : int
 const SCORE_MODIFIER : int = 10
 var speed : float
 const START_SPEED: float = 5.0
-const MAX_SPEED: int = 15
-const SPEED_MODIFIER : int = 5000
+const MAX_SPEED: int = 12
+const SPEED_MODIFIER : int = 8000
 var screen_size: Vector2
 var ground_height : int
 var game_running : bool
@@ -59,6 +59,7 @@ func _physics_process(delta):
 		speed = START_SPEED + score / SPEED_MODIFIER
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
+			
 		adjust_difficulty()
 		
 		#generate obstacles
@@ -68,6 +69,7 @@ func _physics_process(delta):
 		$Dino.position.x += speed
 		$Camera2D.position.x += speed
 		
+		print(speed)
 		#update score
 		score += speed
 		show_score()
@@ -76,6 +78,12 @@ func _physics_process(delta):
 		#need to change this to spawning different ground sprites
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 			$Ground.position.x += screen_size.x
+			
+		#remove obstacles that have gone off screen
+		for obs in obstacles:
+			if obs.position.x < ($Camera2D.position.x - screen_size.x):
+				remove_obs(obs)
+		
 	else:
 		if Input.is_action_pressed("ui_accept"):
 			game_running = true
@@ -86,7 +94,7 @@ func generate_obs():
 	if obstacles.empty() or last_obs.position.x < score + rand_range(100, 300):
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs
-		var max_obs = difficulty + 1
+		var max_obs = difficulty + 1 
 		for i in range(randi() % max_obs + 1):
 			obs = obs_type.instance()
 			var obs_height = obs.get_node("Sprite").texture.get_height()
@@ -95,11 +103,23 @@ func generate_obs():
 			var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) + 55
 			last_obs = obs
 			add_obs(obs, obs_x, obs_y)
-	
+		#additionally random chance to spawn a bird
+		if difficulty == 0: #MAX_DIFFICULTY:
+			if (randi() % 2) == 0:
+				#generate bird obstacles
+				obs = bird_scene.instance()
+				var obs_x : int = screen_size.x + score + 100
+				var obs_y : int = bird_heights[randi() % bird_heights.size()]
+				add_obs(obs, obs_x, obs_y)
+
 func add_obs(obs, x, y):
 	obs.position = Vector2(x, y)
 	add_child(obs)
 	obstacles.append(obs)
+
+func remove_obs(obs):
+	obs.queue_free()
+	obstacles.erase(obs)
 
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
