@@ -55,9 +55,11 @@ func new_game():
 
 func _physics_process(delta):
 	if game_running:
+		#speed up and adjust difficulty
 		speed = START_SPEED + score / SPEED_MODIFIER
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
+		adjust_difficulty()
 		
 		#generate obstacles
 		generate_obs()
@@ -84,7 +86,7 @@ func generate_obs():
 	if obstacles.empty() or last_obs.position.x < score + rand_range(100, 300):
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs
-		var max_obs = 3
+		var max_obs = difficulty + 1
 		for i in range(randi() % max_obs + 1):
 			obs = obs_type.instance()
 			var obs_height = obs.get_node("Sprite").texture.get_height()
@@ -105,3 +107,5 @@ func show_score():
 
 func adjust_difficulty():
 	difficulty = score / SPEED_MODIFIER
+	if difficulty > MAX_DIFFICULTY:
+		difficulty = MAX_DIFFICULTY
