@@ -5,9 +5,11 @@ var stump_scene = preload("res://Scenes/Stump.tscn")
 var rock_scene = preload("res://Scenes/rock.tscn")
 var barrel_scene = preload("res://Scenes/Barrel.tscn")
 var bird_scene = preload("res://Scenes/Bird.tscn")
+var bear_scene = preload("res://Scenes/Bear.tscn")
 var obstacle_types := [stump_scene, rock_scene,barrel_scene]
 var obstacles : Array
 var bird_heights := [160, 240]
+var bear_height := 286
 
 # game variables
 const DINO_START_POS := Vector2(79, 278)
@@ -29,8 +31,9 @@ var last_obs #tracks the last spawned obstacle
 func _ready():
 	screen_size = get_viewport().size
 	ground_height = $Ground.get_node("Sprite").texture.get_height()
-	print(screen_size)
+	#print(screen_size)
 	new_game()
+	print(randi() % 2)
 
 
 func new_game():
@@ -69,7 +72,7 @@ func _physics_process(delta):
 		$Dino.position.x += speed
 		$Camera2D.position.x += speed
 		
-		print(speed)
+		##print(randi() % 5)
 		#update score
 		score += speed
 		show_score()
@@ -111,6 +114,16 @@ func generate_obs():
 				var obs_x : int = screen_size.x + score + 100
 				var obs_y : int = bird_heights[randi() % bird_heights.size()]
 				add_obs(obs, obs_x, obs_y)
+				
+			elif (randi() % 3) == 1:
+				#generate enemy
+				obs = bear_scene.instance()
+				var obs_x : int = screen_size.x + score + 100
+				var obs_y : int = bear_height
+				add_obs(obs, obs_x, obs_y)
+				print("test")
+				pass
+		
 
 func add_obs(obs, x, y):
 	obs.position = Vector2(x, y)
