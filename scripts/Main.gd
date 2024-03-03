@@ -32,7 +32,7 @@ func _ready():
 	screen_size = get_viewport().size
 	ground_height = $Ground.get_node("Sprite").texture.get_height()
 	#print(screen_size)
-	new_game()
+	#new_game()
 	print(randi() % 2)
 
 
