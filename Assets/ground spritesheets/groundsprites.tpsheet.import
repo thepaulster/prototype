@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/groundsprites.tpsheet-b95d31e4d82c86ab86ad837a98ff37be.res"
+
+[deps]
+
+files=[ "res://Assets/ground spritesheets/groundsprites.sprites/ground.tres", "res://Assets/ground spritesheets/groundsprites.sprites/clouds.tres", "res://Assets/ground spritesheets/groundsprites.sprites/sky.tres", "res://Assets/ground spritesheets/groundsprites.sprites/background.tres", "res://Assets/ground spritesheets/groundsprites.sprites/midground.tres", "res://Assets/ground spritesheets/groundsprites.sprites/bushes.tres" ]
+
+source_file="res://Assets/ground spritesheets/groundsprites.tpsheet"
+dest_files=[ "res://.import/groundsprites.tpsheet-b95d31e4d82c86ab86ad837a98ff37be.res", "res://Assets/ground spritesheets/groundsprites.sprites/ground.tres", "res://Assets/ground spritesheets/groundsprites.sprites/clouds.tres", "res://Assets/ground spritesheets/groundsprites.sprites/sky.tres", "res://Assets/ground spritesheets/groundsprites.sprites/background.tres", "res://Assets/ground spritesheets/groundsprites.sprites/midground.tres", "res://Assets/ground spritesheets/groundsprites.sprites/bushes.tres" ]
+
+[params]
+

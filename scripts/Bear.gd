@@ -12,4 +12,5 @@ func _ready():
 
 
 func _process(delta):
-	position.x -= get_parent().speed / 1.5
+	#position.x -= get_parent().speed / 1.5
+	pass

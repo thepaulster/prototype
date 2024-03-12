@@ -15,9 +15,10 @@ __meta__ = {
 [node name="Bg" parent="." instance=ExtResource( 2 )]
 
 [node name="Ground" parent="." instance=ExtResource( 3 )]
+z_index = 4
 
 [node name="Dino" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79, 278 )
+position = Vector2( 108, 296 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 320, 180 )

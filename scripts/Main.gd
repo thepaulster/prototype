@@ -19,8 +19,8 @@ const MAX_DIFFICULTY : int = 2
 var score : int
 const SCORE_MODIFIER : int = 10
 var speed : float
-const START_SPEED: float = 5.0
-const MAX_SPEED: int = 12
+const START_SPEED: float = 4.0
+const MAX_SPEED: int = 10
 const SPEED_MODIFIER : int = 8000
 var screen_size: Vector2
 var ground_height : int

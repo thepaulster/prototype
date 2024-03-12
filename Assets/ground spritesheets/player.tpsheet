@@ -1,0 +1,153 @@
+{
+	"textures": [
+		{
+			"image": "player-0.png",
+			"size": {
+				"w": 482,
+				"h": 1496
+			},
+			"sprites": [
+				{
+					"filename": "hyena0000.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 480,
+						"h": 268
+					},
+					"margin": {
+						"x": 0,
+						"y": 28,
+						"w": 0,
+						"h": 52
+					}
+				},
+				{
+					"filename": "hyena0001.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 480,
+						"h": 268
+					},
+					"margin": {
+						"x": 0,
+						"y": 28,
+						"w": 0,
+						"h": 52
+					}
+				},
+				{
+					"filename": "hyena0008.png",
+					"region": {
+						"x": 1,
+						"y": 271,
+						"w": 456,
+						"h": 319
+					},
+					"margin": {
+						"x": 13,
+						"y": 1,
+						"w": 24,
+						"h": 1
+					}
+				},
+				{
+					"filename": "hyena0006.png",
+					"region": {
+						"x": 1,
+						"y": 592,
+						"w": 456,
+						"h": 318
+					},
+					"margin": {
+						"x": 0,
+						"y": 2,
+						"w": 24,
+						"h": 2
+					}
+				},
+				{
+					"filename": "hyena0007.png",
+					"region": {
+						"x": 1,
+						"y": 592,
+						"w": 456,
+						"h": 318
+					},
+					"margin": {
+						"x": 0,
+						"y": 2,
+						"w": 24,
+						"h": 2
+					}
+				},
+				{
+					"filename": "hyena0002.png",
+					"region": {
+						"x": 1,
+						"y": 912,
+						"w": 453,
+						"h": 283
+					},
+					"margin": {
+						"x": 1,
+						"y": 20,
+						"w": 27,
+						"h": 37
+					}
+				},
+				{
+					"filename": "hyena0003.png",
+					"region": {
+						"x": 1,
+						"y": 912,
+						"w": 453,
+						"h": 283
+					},
+					"margin": {
+						"x": 1,
+						"y": 20,
+						"w": 27,
+						"h": 37
+					}
+				},
+				{
+					"filename": "hyena0004.png",
+					"region": {
+						"x": 1,
+						"y": 1197,
+						"w": 429,
+						"h": 298
+					},
+					"margin": {
+						"x": 22,
+						"y": 13,
+						"w": 51,
+						"h": 22
+					}
+				},
+				{
+					"filename": "hyena0005.png",
+					"region": {
+						"x": 1,
+						"y": 1197,
+						"w": 429,
+						"h": 298
+					},
+					"margin": {
+						"x": 22,
+						"y": 13,
+						"w": 51,
+						"h": 22
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:8c2350541b116333a1f6ec89d081ead4:f7997b1b92fa643eeee2e58c94359147:6b25fff7106e9fbe3ebf9300d5ce6cba$"
+	}
+}

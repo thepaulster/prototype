@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/player.tpsheet-37f6612e09580bfb32aa9235da9402cc.res"
+
+[deps]
+
+files=[ "res://Assets/ground spritesheets/player.sprites/hyena0000.tres", "res://Assets/ground spritesheets/player.sprites/hyena0001.tres", "res://Assets/ground spritesheets/player.sprites/hyena0008.tres", "res://Assets/ground spritesheets/player.sprites/hyena0006.tres", "res://Assets/ground spritesheets/player.sprites/hyena0007.tres", "res://Assets/ground spritesheets/player.sprites/hyena0002.tres", "res://Assets/ground spritesheets/player.sprites/hyena0003.tres", "res://Assets/ground spritesheets/player.sprites/hyena0004.tres", "res://Assets/ground spritesheets/player.sprites/hyena0005.tres" ]
+
+source_file="res://Assets/ground spritesheets/player.tpsheet"
+dest_files=[ "res://.import/player.tpsheet-37f6612e09580bfb32aa9235da9402cc.res", "res://Assets/ground spritesheets/player.sprites/hyena0000.tres", "res://Assets/ground spritesheets/player.sprites/hyena0001.tres", "res://Assets/ground spritesheets/player.sprites/hyena0008.tres", "res://Assets/ground spritesheets/player.sprites/hyena0006.tres", "res://Assets/ground spritesheets/player.sprites/hyena0007.tres", "res://Assets/ground spritesheets/player.sprites/hyena0002.tres", "res://Assets/ground spritesheets/player.sprites/hyena0003.tres", "res://Assets/ground spritesheets/player.sprites/hyena0004.tres", "res://Assets/ground spritesheets/player.sprites/hyena0005.tres" ]
+
+[params]
+

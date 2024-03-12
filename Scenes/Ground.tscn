@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/img/background/ground.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ground spritesheets/groundsprites.sprites/ground.tres" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1282, 46 )
@@ -8,8 +9,12 @@ extents = Vector2( 1282, 46 )
 [node name="Ground" type="StaticBody2D"]
 scale = Vector2( 0.5, 0.5 )
 collision_mask = 2
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, 624 )
 scale = Vector2( 1.11545, 1 )
 texture = ExtResource( 1 )
@@ -18,3 +23,11 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1284, 674 )
 shape = SubResource( 1 )
+
+[node name="Groundsprites" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+
+[node name="Groundsprites2" type="Sprite" parent="."]
+position = Vector2( 1920, 360 )
+texture = ExtResource( 2 )

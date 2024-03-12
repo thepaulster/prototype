@@ -1,0 +1,108 @@
+{
+	"textures": [
+		{
+			"image": "groundsprites-0.png",
+			"size": {
+				"w": 1284,
+				"h": 786
+			},
+			"sprites": [
+				{
+					"filename": "ground.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 1280,
+						"h": 119
+					},
+					"margin": {
+						"x": 0,
+						"y": 601,
+						"w": 0,
+						"h": 601
+					}
+				},
+				{
+					"filename": "clouds.png",
+					"region": {
+						"x": 1,
+						"y": 122,
+						"w": 640,
+						"h": 360
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sky.png",
+					"region": {
+						"x": 643,
+						"y": 122,
+						"w": 640,
+						"h": 360
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "background.png",
+					"region": {
+						"x": 1,
+						"y": 484,
+						"w": 640,
+						"h": 261
+					},
+					"margin": {
+						"x": 0,
+						"y": 99,
+						"w": 0,
+						"h": 99
+					}
+				},
+				{
+					"filename": "midground.png",
+					"region": {
+						"x": 643,
+						"y": 484,
+						"w": 640,
+						"h": 261
+					},
+					"margin": {
+						"x": 0,
+						"y": 99,
+						"w": 0,
+						"h": 99
+					}
+				},
+				{
+					"filename": "bushes.png",
+					"region": {
+						"x": 1,
+						"y": 747,
+						"w": 542,
+						"h": 38
+					},
+					"margin": {
+						"x": 25,
+						"y": 281,
+						"w": 98,
+						"h": 322
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:049049383c270e46d7d2b2d48c533066:45881d4115399ecd81528403e10416eb:9c3ed6704f699bf907cffee5f30025c5$"
+	}
+}
