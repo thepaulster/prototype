@@ -3,8 +3,8 @@
 		{
 			"image": "groundsprites-0.png",
 			"size": {
-				"w": 1284,
-				"h": 786
+				"w": 1926,
+				"h": 592
 			},
 			"sprites": [
 				{
@@ -55,8 +55,8 @@
 				{
 					"filename": "background.png",
 					"region": {
-						"x": 1,
-						"y": 484,
+						"x": 1285,
+						"y": 1,
 						"w": 640,
 						"h": 261
 					},
@@ -70,8 +70,8 @@
 				{
 					"filename": "midground.png",
 					"region": {
-						"x": 643,
-						"y": 484,
+						"x": 1285,
+						"y": 264,
 						"w": 640,
 						"h": 261
 					},
@@ -86,7 +86,7 @@
 					"filename": "bushes.png",
 					"region": {
 						"x": 1,
-						"y": 747,
+						"y": 484,
 						"w": 542,
 						"h": 38
 					},
@@ -96,6 +96,96 @@
 						"w": 98,
 						"h": 322
 					}
+				},
+				{
+					"filename": "trunk.png",
+					"region": {
+						"x": 1,
+						"y": 524,
+						"w": 163,
+						"h": 67
+					},
+					"margin": {
+						"x": 30,
+						"y": 14,
+						"w": 77,
+						"h": 29
+					}
+				},
+				{
+					"filename": "rock1.png",
+					"region": {
+						"x": 545,
+						"y": 484,
+						"w": 211,
+						"h": 77
+					},
+					"margin": {
+						"x": 13,
+						"y": 10,
+						"w": 29,
+						"h": 19
+					}
+				},
+				{
+					"filename": "stump2.png",
+					"region": {
+						"x": 758,
+						"y": 484,
+						"w": 138,
+						"h": 96
+					},
+					"margin": {
+						"x": 48,
+						"y": 0,
+						"w": 102,
+						"h": 0
+					}
+				},
+				{
+					"filename": "rock3.png",
+					"region": {
+						"x": 898,
+						"y": 484,
+						"w": 118,
+						"h": 68
+					},
+					"margin": {
+						"x": 60,
+						"y": 13,
+						"w": 122,
+						"h": 28
+					}
+				},
+				{
+					"filename": "stump.png",
+					"region": {
+						"x": 1018,
+						"y": 484,
+						"w": 102,
+						"h": 72
+					},
+					"margin": {
+						"x": 68,
+						"y": 11,
+						"w": 138,
+						"h": 24
+					}
+				},
+				{
+					"filename": "rock2.png",
+					"region": {
+						"x": 1122,
+						"y": 484,
+						"w": 73,
+						"h": 87
+					},
+					"margin": {
+						"x": 79,
+						"y": 4,
+						"w": 167,
+						"h": 9
+					}
 				}
 			]
 		}
@@ -103,6 +193,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:049049383c270e46d7d2b2d48c533066:45881d4115399ecd81528403e10416eb:9c3ed6704f699bf907cffee5f30025c5$"
+		"smartupdate": "$TexturePacker:SmartUpdate:9423723d1651ee0e5e782a21615f348c:14a2f5f27c3e5ae49ee5799f2ff68a40:9c3ed6704f699bf907cffee5f30025c5$"
 	}
 }

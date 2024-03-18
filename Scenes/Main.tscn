@@ -15,6 +15,7 @@ __meta__ = {
 [node name="Bg" parent="." instance=ExtResource( 2 )]
 
 [node name="Ground" parent="." instance=ExtResource( 3 )]
+visible = false
 z_index = 4
 
 [node name="Dino" parent="." instance=ExtResource( 1 )]

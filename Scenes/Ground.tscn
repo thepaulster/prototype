@@ -8,6 +8,7 @@ extents = Vector2( 1282, 46 )
 
 [node name="Ground" type="StaticBody2D"]
 scale = Vector2( 0.5, 0.5 )
+z_index = 2
 collision_mask = 2
 __meta__ = {
 "_edit_vertical_guides_": [  ]

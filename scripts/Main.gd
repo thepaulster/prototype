@@ -1,11 +1,14 @@
 extends Node
 
+#preload ground scenes
+var groundScene = preload("res://Scenes/Ground.tscn")
+
 #preload obstacles
 var stump_scene = preload("res://Scenes/Stump.tscn")
 var rock_scene = preload("res://Scenes/rock.tscn")
 var barrel_scene = preload("res://Scenes/Barrel.tscn")
-var bird_scene = preload("res://Scenes/Bird.tscn")
-var bear_scene = preload("res://Scenes/Bear.tscn")
+var bird_scene = preload("res://Scenes/Barrel.tscn")#preload("res://Scenes/Bird.tscn")
+var bear_scene = preload("res://Scenes/Barrel.tscn")#preload("res://Scenes/Bear.tscn")
 var obstacle_types := [stump_scene, rock_scene,barrel_scene]
 var obstacles : Array
 var bird_heights := [160, 240]
@@ -26,6 +29,9 @@ var screen_size: Vector2
 var ground_height : int
 var game_running : bool
 var last_obs #tracks the last spawned obstacle
+var groundArray = [] #array to store loaded ground scenes
+var visibleGroundCount = 2 #Number of ground scenes visible on the screen
+var swapRequested = false #flag to track whether swapping has been initiated
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,7 +39,7 @@ func _ready():
 	ground_height = $Ground.get_node("Sprite").texture.get_height()
 	#print(screen_size)
 	#new_game()
-	print(randi() % 2)
+	new_ground()
 
 
 func new_game():
@@ -55,6 +61,20 @@ func new_game():
 	#reset HUD
 	$HUD.get_node("StartLabel").show()
 
+func new_ground():
+	#load a fixed number of ground scenes into an array
+	for i in range(visibleGroundCount):
+		var groundInstance = groundScene.instance()
+		add_child(groundInstance)
+		groundArray.append(groundInstance)
+		
+		#setip the initial positions of the ground scenes in the array
+		arrangeGroundScenes()
+		
+		#start the initial ground swapping process
+		#swapGroundScenes()
+		
+		Engine.get_main_loop().connect("idle_frame", self, "swapGroundScenes")
 
 func _physics_process(delta):
 	if game_running:
@@ -80,17 +100,23 @@ func _physics_process(delta):
 		#update ground position
 		#need to change this to spawning different ground sprites
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
-			$Ground.position.x += screen_size.x
-			
+			#$Ground.position.x += screen_size.x
+			#swapGroundScenes()
+			#requestGroundSwap()
+			pass
+		
 		#remove obstacles that have gone off screen
 		for obs in obstacles:
 			if obs.position.x < ($Camera2D.position.x - screen_size.x):
 				remove_obs(obs)
 		
 	else:
-		if Input.is_action_pressed("ui_accept"):
+		if Input.is_action_pressed("ui_accept") or InputEventScreenTouch:
 			game_running = true
 			$HUD.get_node("StartLabel").hide()
+
+func _process(delta):
+	requestGroundSwap()
 
 func generate_obs():
 	#generate ground obstacles
@@ -121,7 +147,7 @@ func generate_obs():
 				var obs_x : int = screen_size.x + score + 100
 				var obs_y : int = bear_height
 				add_obs(obs, obs_x, obs_y)
-				print("test")
+				
 				pass
 		
 
@@ -142,3 +168,39 @@ func adjust_difficulty():
 	difficulty = score / SPEED_MODIFIER
 	if difficulty > MAX_DIFFICULTY:
 		difficulty = MAX_DIFFICULTY
+
+func arrangeGroundScenes():
+	#set the positions of ground scenes based on their order in the array
+	for i in range(groundArray.size()):
+		groundArray[i].position = Vector2(i * groundScene.instance().get_child(3).texture.get_width(), 0)
+	
+
+func requestGroundSwap():
+	swapRequested = true
+
+func swapGroundScenes():
+	if swapRequested:
+		print("test")
+		#move the first ground scene to the end of the arrray
+		var firstGround =  groundArray[0]
+		groundArray.remove(0)
+		groundArray.append(firstGround)
+		
+		#adjust the positions of ground scenes
+		arrangeGroundScenes()
+		
+		#Check if the first groundscene is completely off the screen
+		if firstGround.position.x + firstGround.get_child(3).texture.get_width() < 0:
+			
+			#remove the ground instance from both the scene and the array
+			firstGround.queue_free()
+			groundArray.remove(0) 
+		
+		#spawn a new ground at the end of the array
+		var lastGround = groundArray[groundArray.size() - 1]
+		var newGround = groundScene.instance()
+		newGround.position = lastGround.position + Vector2(lastGround.get_child(3).texture.get_width(), 0)
+		add_child(newGround)
+		groundArray.append(newGround)
+		
+		swapRequested = false

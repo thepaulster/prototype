@@ -112,6 +112,7 @@ visible = false
 scale = Vector2( 3, 3 )
 frames = SubResource( 18 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -119,7 +120,7 @@ position = Vector2( 0, -14 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 18 )
 animation = "hyena_run"
-frame = 2
+frame = 1
 playing = true
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
